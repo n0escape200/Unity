@@ -8,6 +8,9 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField]
     List<Item> items;
 
+    public Item hands;
+
+    public bool isEmptyHands = true;
 
     public void AddItem(Item item)
     {

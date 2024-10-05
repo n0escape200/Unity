@@ -764,16 +764,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6613495633726266844, guid: 15ba32db32aad274bb0f74349e992c51, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 5983685483354674412, guid: 4ddfc2acdc092ab43a237de2b20efff3, type: 3}
     - target: {fileID: 9041646481137556193, guid: 15ba32db32aad274bb0f74349e992c51, type: 3}
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2290411364704072359, guid: 15ba32db32aad274bb0f74349e992c51, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15ba32db32aad274bb0f74349e992c51, type: 3}

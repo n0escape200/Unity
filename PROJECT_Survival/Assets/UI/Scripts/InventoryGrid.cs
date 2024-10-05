@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryGrid : MonoBehaviour
+public class InventoryGrid : MonoBehaviour, IPointerMoveHandler
 {
     // Start is called before the first frame update
 
@@ -40,8 +40,9 @@ public class InventoryGrid : MonoBehaviour
         
     }
 
-    void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerMove(PointerEventData eventData)
     {
-        Debug.Log(eventData.pointerEnter);
+        Vector3 coord = ((Input.mousePosition - this.transform.position) / 32);
+        Debug.Log(name +"="+ (int)coord.x + ":" + (int)coord.y);
     }
 }

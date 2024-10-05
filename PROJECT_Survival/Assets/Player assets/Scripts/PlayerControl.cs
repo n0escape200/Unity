@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour
         controller = GetComponent<CharacterController>();
         GameObject HUDinst =  Instantiate(HUD);
         HUDinst.name = "HUD";
-        HUDinst.transform.parent = this.transform;
+        HUDinst.GetComponent<Canvas>().transform.SetParent(this.transform);
     }
 
     // Update is called once per frame

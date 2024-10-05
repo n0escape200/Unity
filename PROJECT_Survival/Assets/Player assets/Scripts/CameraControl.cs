@@ -17,19 +17,19 @@ public class CameraControl : MonoBehaviour
     TextMeshProUGUI interactionText;
 
     Transform obj;
+    bool isEmptyHands;
 
-    // Start is called before the first frame update
+
     void Start()
     {
+        isEmptyHands = GetComponentInParent<PlayerInventory>().isEmptyHands;
     }
 
-    // Update is called once per frame
     void Update()
     {
         while (obj == null) 
         {
             obj = transform.Find("HUD/InteractionText");
-            Debug.Log("ESYEUYSH");
         }
 
         if(obj != null)
@@ -62,9 +62,11 @@ public class CameraControl : MonoBehaviour
                 if (gameObject.GetComponent<ItemManager>())
                 {
                     interactionText.text = gameObject.GetComponent<ItemManager>().itemName + "\n <size=50%>Press F to pickup";
-                    if (Input.GetKeyDown(KeyCode.F))
+                    if (Input.GetKeyDown(KeyCode.F) && isEmptyHands)
                     {
-                        GetComponentInParent<PlayerInventory>().AddItem(gameObject.GetComponent<ItemManager>().GetScriptObj());
+                        GetComponentInParent<PlayerInventory>().hands = gameObject.GetComponent<ItemManager>().GetScriptObj();
+
+                        isEmptyHands = false;
                         Destroy(gameObject);
                     }
                     interactionText.GetComponent<TextMeshProUGUI>().enabled = true;
